@@ -64,7 +64,7 @@ def main():
     # Insert game result into the database
     cursor.execute(
         "INSERT INTO games (username, guess_count, secret_number, date) VALUES (?, ?, ?, ?)",
-        (username, guess_count, secret_number, datetime.now())
+        (username, guess_count, secret_number, datetime.now().isoformat())
     )
     conn.commit()
 
